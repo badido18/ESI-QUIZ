@@ -4,7 +4,7 @@ class Qcm extends Question{
 	
 	private String[] propositions ;
 	private int nbpropositions;
-	private Strting[] bonneReponses;
+	private String[] bonneReponses;
 	private int nbBonnereponses;
 	private String[] reponseSelectiones;
 	private int nbreponsesSelectiones;

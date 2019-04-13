@@ -16,6 +16,9 @@ class Apprenant extends Compte{
 	}
 	public Quiz selectionnerQuiz(String notion){
 
+		Quiz quiz= new Quiz();
+		return quiz ;
+
 	}
 	public void visualiserQuiz(Quiz quiz){
 
@@ -29,6 +32,6 @@ class Apprenant extends Compte{
 	public void soumettreEvaluation(Quiz quiz){
 
 	}
-	
+
 
 }
