@@ -1,9 +1,12 @@
 class Application{
+    boolean stop = false;
 	public static void main(String[] args) {
 		ESIQuiz application = new ESIQuiz();
-		while (1){
-			application.menuPrincipale();
-		}
+        for (int i = 0; i <5 ; i++) {
+            application.menuPrincipale();
+        }
+
+
 
 	}
 }

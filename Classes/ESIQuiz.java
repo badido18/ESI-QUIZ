@@ -31,6 +31,7 @@ class ESIQuiz{
 
 	}
 	private void creerCompteFormateur(){
+		tabFomrateurs[0]= new Formateur();
 
 	}
 	private void menuPrincipale(){
@@ -51,7 +52,7 @@ class ESIQuiz{
 		option = sc.nextInt();
 		switch(option)
 		{
-			case 1 : break;
+			case 1 :  creerCompteFormateur(); break;
 			case 2 : break;
 			case 3 : break;
 			case 0 : break; //exit

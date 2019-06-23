@@ -21,10 +21,12 @@ abstract class Compte{
 	//methodes
 	
 	private void defineloginDefault(){
-
+		login[0]=preNom[0];
+		login[1]=' ';
+		login=login.concat(nom)
 	}
 	private void defineMotDePasseDefault(){
-
+		motDePasse=nom.concat(dateNaissance)
 	}
 
 
