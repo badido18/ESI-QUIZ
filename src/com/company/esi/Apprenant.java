@@ -8,7 +8,6 @@ class Apprenant extends Compte{
     public Apprenant(){
         super();
         super.type = 0;
-        //initialistation et chargement des Quiz de l'apprenant
     }
     private static Scanner sc = new Scanner(System.in);
 
@@ -20,7 +19,7 @@ class Apprenant extends Compte{
             System.out.println(" \n ***Menu Apprenant*** ");
             System.out.println(" 1- Afficher liste des Quiz ");
             System.out.println(" 2- Se Deconnecter ");
-            //a voir comment remplir le menu de celui ci ou faire un menu pour chaque quiz
+            //avoir comment remplir le menu de celui ci ou faire un menu pour chaque quiz
             choix = sc.nextInt();
 
             switch (choix) {
