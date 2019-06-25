@@ -41,9 +41,7 @@ class ESIQUIZ{
     }
     private Compte SearchApprenant(String login, String mdp){
         if(tabFomrateurs[0]!=null)
-        {
-            return null;
-        }
+            return tabFomrateurs[0].formation.SearchApprenant(login,mdp);
         else{
             System.out.println("Message d'erreur : Aucun Formateur n'a ete cree ");
             return null ;
@@ -91,10 +89,9 @@ class ESIQUIZ{
         boolean connecte = true;
 
         System.out.println(" Ouverture de la session : ");
-        while (connecte){
-            cmp.Menu(cmp , connecte);
+        while (cmp.connected){
+            cmp.Menu();
         }
-
         System.out.println(" Fin de la Session ! ");
     }
 

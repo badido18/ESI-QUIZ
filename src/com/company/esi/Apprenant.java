@@ -13,10 +13,10 @@ class Apprenant extends Compte{
     private static Scanner sc = new Scanner(System.in);
 
     @Override
-    public void Menu(Compte cmp, boolean connected){
+    public void Menu(){
 
         int choix ;
-        while(connected) {
+        while(this.connected) {
             System.out.println(" \n ***Menu Apprenant*** ");
             System.out.println(" 1- Afficher liste des Quiz ");
             System.out.println(" 2- Se Deconnecter ");
@@ -24,10 +24,11 @@ class Apprenant extends Compte{
 
             switch (choix) {
                 case 1 : afficherListeQuiz(); break;
-                case 2 : connected = false;  break;
+                case 2 : this.connected = false;  break;
             }
         }
     }
+
     //Attribus
 
     public Quiz[] tabQuiz;

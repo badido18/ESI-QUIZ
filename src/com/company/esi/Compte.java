@@ -25,6 +25,7 @@ abstract class Compte{
     private String adresse;
     public String login ;
     public String motDePasse;
+    public boolean connected;
 
     //methodes
         static Scanner sc = new Scanner(System.in);
@@ -53,10 +54,11 @@ abstract class Compte{
     }
 
     public void DisplayLogin(){
+        System.out.println("Vos information : ");
         System.out.println("Login : "+login);
         System.out.println("MDP :  "+motDePasse);
     }
-    abstract public void Menu(Compte cmp,boolean connected);
+    abstract public void Menu();
 
 
 }

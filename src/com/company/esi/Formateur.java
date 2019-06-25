@@ -11,15 +11,15 @@ class Formateur extends Compte{
     }
     static private Scanner sc = new Scanner(System.in);
     @Override
-    public void Menu(Compte cmp, boolean connected){
-        while(connected){
+    public void Menu(){
+        while(this.connected){
             int choix = 0;
             System.out.println(" \n ***Menu Foramteur*** ");
             System.out.println(" 1- Visualiser les Quiz ");
             choix = sc.nextInt();
             switch (choix) {
                 case 1 : break;
-                case 2 : connected = false; break ;
+                case 2 : this.connected = false; break ;
             }
         }
 
