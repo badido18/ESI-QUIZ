@@ -4,15 +4,14 @@ class Quiz{
 
     //Attribus
 
-    private String[] tabNotion ;
-    private Question[] tabQuestions;
-    private int nbQuestion;
+    private Notion[] tabNotion;
+    private String nomFormation;
     private String dateOuverture;
     private String dateExpiration;
+    private int nbNotions;
     private float accomplissement ;
     private float reussite;
     private boolean soumis;
-    private String nomFormation;
 
     //Methodes
 

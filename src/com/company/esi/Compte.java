@@ -12,20 +12,19 @@ abstract class Compte{
         setDateNaissance();
         defineloginDefault();
         defineMotDePasseDefault();
-
         DisplayLogin();
     }
 
 
     //Attribus
-
+    public int  type; //le type du compte apprenant "0" oubien formateur "1" ceci est un indicateur
     private int id;
     private String Nom;
     private String preNom;
     private String dateNaissance;
     private String adresse;
-    private String login ;
-    private String motDePasse;
+    public String login ;
+    public String motDePasse;
 
     //methodes
         static Scanner sc = new Scanner(System.in);
@@ -57,6 +56,7 @@ abstract class Compte{
         System.out.println("Login : "+login);
         System.out.println("MDP :  "+motDePasse);
     }
+    abstract public void Menu(Compte cmp,boolean connected);
 
 
 }
