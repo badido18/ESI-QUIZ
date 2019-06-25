@@ -20,11 +20,12 @@ class Apprenant extends Compte{
             System.out.println(" \n ***Menu Apprenant*** ");
             System.out.println(" 1- Afficher liste des Quiz ");
             System.out.println(" 2- Se Deconnecter ");
+            //a voir comment remplir le menu de celui ci ou faire un menu pour chaque quiz
             choix = sc.nextInt();
 
             switch (choix) {
                 case 1 : afficherListeQuiz(); break;
-                case 2 : this.connected = false;  break;
+                case 2 : seDeconnecter();  break;
             }
         }
     }

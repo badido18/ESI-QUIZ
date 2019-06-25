@@ -15,11 +15,13 @@ class Formateur extends Compte{
         while(this.connected){
             int choix = 0;
             System.out.println(" \n ***Menu Foramteur*** ");
-            System.out.println(" 1- Visualiser les Quiz ");
+            System.out.println(" 1- Creer formation ");
+            System.out.println(" 0- Se deconnecter ");
+            //a remplir avec les methode de la classe
             choix = sc.nextInt();
             switch (choix) {
-                case 1 : break;
-                case 2 : this.connected = false; break ;
+                case 1 : creerFormation();
+                case 0 : seDeconnecter(); break ;
             }
         }
 

@@ -17,24 +17,31 @@ class ESIQUIZ{
 
     private void seConecter(){
         int type;
-        System.out.print("Vous etes 1-Formateur 2-Apprenant ");
+        String login,mdp;
+        System.out.print("Vous etes 1 Formateur / 2 Apprenant  :  ");
         type= sc.nextInt();
-        System.out.print("Veuillez introduire votre Login : ");
-        String login = sc.nextLine();
+        sc.nextLine();//afin d'eviter le bug de retour de ligne
+        System.out.println("Veuillez introduire votre Login : ");
+        login = sc.nextLine();
         System.out.print("Mot De Passe : ");
-        String mdp = sc.nextLine();
-        switch(type){
-            case 1 : compteConnecte = SearchFormateur(login,mdp);
-            case 2 : compteConnecte = SearchApprenant(login,mdp);
-        }
-        if(compteConnecte != null )
+        mdp = sc.nextLine();
+
+        try{
+            switch(type){
+                case 1 : compteConnecte = SearchFormateur(login,mdp);break;
+                case 2 : compteConnecte = SearchApprenant(login,mdp);break;
+            }
+            compteConnecte.connected=true;
             Session(compteConnecte);
-        else
+        }
+        catch( NullPointerException e) {
             System.out.println("la Connexion a echoue (login ou mot de passe incorrect)");
+        }
+
     }
 
     private Compte SearchFormateur(String login, String mdp){
-        if((tabFomrateurs[0].login==login)&&(tabFomrateurs[0].motDePasse==mdp))
+        if((tabFomrateurs[0].login.equals(login) )&&(tabFomrateurs[0].motDePasse.equals(mdp)))
             return tabFomrateurs[0];
         else
             return null;
@@ -48,9 +55,6 @@ class ESIQUIZ{
         }
     }
 
-    private void seDeconnecter(){
-
-    }
     private Quiz generationCopieReponse(Quiz quiz){
         quiz= new Quiz();
         return quiz ;
@@ -63,7 +67,6 @@ class ESIQUIZ{
     }
     private void creerCompteFormateur(){
         tabFomrateurs[0]= new Formateur();
-
     }
     public void menuPrincipale(){
 
@@ -86,8 +89,6 @@ class ESIQUIZ{
         }
     }
     public void Session(Compte cmp){
-        boolean connecte = true;
-
         System.out.println(" Ouverture de la session : ");
         while (cmp.connected){
             cmp.Menu();

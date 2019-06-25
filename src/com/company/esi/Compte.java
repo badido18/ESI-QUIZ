@@ -17,7 +17,7 @@ abstract class Compte{
 
 
     //Attribus
-    public int  type; //le type du compte apprenant "0" oubien formateur "1" ceci est un indicateur
+    public int  type; //le type du compte apprenant "0" oubien formateur "1" ceci est un indicateur eventuelle
     private int id;
     private String Nom;
     private String preNom;
@@ -25,13 +25,12 @@ abstract class Compte{
     private String adresse;
     public String login ;
     public String motDePasse;
-    public boolean connected;
+    public boolean connected =false;
 
     //methodes
         static Scanner sc = new Scanner(System.in);
     public void setNom(){
 
-        System.out.println("Création d'un compte formateur");
         System.out.println("Veuillez entrer votre nom : ");
         Nom= sc.nextLine();
     }
@@ -46,18 +45,35 @@ abstract class Compte{
 
     private void defineloginDefault(){
         login = preNom ;
-        login +=' ';
+        //login +=' ';
         login += Nom;
     }
     private void defineMotDePasseDefault(){
         motDePasse= Nom + dateNaissance;
     }
 
+
+    public void setLogin(){
+        System.out.println("Veuillez entrer votre nouveau login: ");
+        login= sc.nextLine();
+    }
+    public void setMotDePasse(){
+        System.out.println("Veuillez entrer votre nouveau mot de passe : ");
+        motDePasse= sc.nextLine();
+    }
+
+
     public void DisplayLogin(){
         System.out.println("Vos information : ");
         System.out.println("Login : "+login);
-        System.out.println("MDP :  "+motDePasse);
+        System.out.println("MDP : "+motDePasse);
     }
+
+    protected void seDeconnecter(){
+        this.connected=false;
+    }
+
+    //methode abstraite
     abstract public void Menu();
 
 
