@@ -11,11 +11,13 @@ class Qcu extends Question {
 
     //Methodes
 
-    public void evaluerReponse(){
-
+    public int evaluerReponse(){
+        if( reponseSelectione.equals(bonnereponse) )
+            return  1 ;
+        return 0;
     }
-    public void repondre(){
-        //selectioner une reponse
+    public void repondre(int choix){
+        reponseSelectione=propositions[choix];
     }
 
 

@@ -4,13 +4,11 @@ import java.util.Scanner;
 
 class Formateur extends Compte{
 
-    Formateur(){
-        super();
+    Formateur(String nom, String prenom, String dateN){
+        super(nom,prenom,dateN);
         super.type = 1;
         // initialisation et chargement des quiz du formateur
     }
-    static private Scanner sc = new Scanner(System.in);
-
     //Attribus
 
     public Formation formation;
@@ -18,116 +16,47 @@ class Formateur extends Compte{
 
     //Methodes
 
-    @Override
-    public void Menu(){
-        int choix = 0;
-        while(this.connected){
-            System.out.println(" \n ***Menu Foramteur*** ");
-            System.out.println(" 1- Creer une Formation ");
-            System.out.println(" 2- Gestion compte apprenant ");
-            System.out.println(" 3- Gestion des Quiz ");
-            System.out.println(" 0- Se deconnecter ");
-            choix = sc.nextInt();
-            switch (choix) {
-                case 1 : creerFormation();break;
-                case 2 : GestionCompteApprenant();break;
-                case 3 : creerFormation();break;
-                case 0 : seDeconnecter(); break ;
-            }
-        }
 
-    }
 
-    public void GestionCompteApprenant(){
-        boolean quit = false;
-        int choix = 0 ;
-        while(!quit){
-            System.out.println(" \n ***Gestion des Apprenant*** ");
-            System.out.println(" 1- Ajouter un  compte apprenant ");
-            System.out.println(" 2- Modifier un compte apprenant ");
-            System.out.println(" 3- Supprimer un compte apprenant ");
-            System.out.println(" 4- Consulter l'activité d'un apprenant");
-            System.out.println(" 0- Retour ");
-            choix = sc.nextInt();
-            switch (choix) {
-                case 1 : creerCompteApprenant();break;
-                case 2 : modifierCompteApprenant();break;
-                case 3 : supprimerCompteApprenant();break;
-                case 4 : consulterActiviteApprenant();break;
-                case 0 : quit = true ; break;
-            }
-        }
-    }
-
-    public void GestionDesQuiz(){
-        boolean quit = false;
-        int choix = 0 ;
-        while(!quit){
-            System.out.println(" \n ***Gestion des Quiz de la formation*** ");
-            System.out.println(" 1- Afficher les Quiz ");
-            System.out.println(" 2- Ajouter Quiz");
-            System.out.println(" 3- Modifier Quiz ");
-            System.out.println(" 4- Supprimer un Quiz");
-            System.out.println(" 0- Retour ");
-            choix = sc.nextInt();
-            switch (choix) {
-                case 1 : afficherQuiz();
-                case 2 : ajouterQuiz();break;
-                case 3 : modifierQuiz();break;
-                case 4 : supprimerQuiz();
-                case 0 : quit = true ; break;
-            }
-        }
-    }
-
-    private void creerFormation(){
+    public void creerFormation(){
         formation = new Formation();
         //il peut creer une seule
     }
-    private void creerCompteApprenant(){
+    public void creerCompteApprenant(String nom, String prenom, String dateN){
         try{
             formation.nbapprenant++;
-            formation.groupeApprenant.add(new Apprenant());
+            formation.groupeApprenant.add(new Apprenant(formation.tabQuiz,nom,prenom,dateN));
         }
         catch(NullPointerException e){
             System.out.println("Aucune formation n'as ete cree ! ( Veuillez creer une formation avant )");
         }
 
     }
-    private void modifierCompteApprenant(){
+    public void modifierCompteApprenant(String login,String nvlogin,String nvmdp){
         Compte app;
-        System.out.print("Entrer le login  de l'apprenant : ");
-        app = formation.SearchApprenant(sc.nextLine());
-        //partie menu
-            boolean quit = false;
-            while(!quit){
-                int choix;
-                System.out.println(" \n ***Gestion des Quiz de la formation*** ");
-                System.out.println(" \n 0- Retour ");
-                choix =sc.nextInt();
-                switch(choix){
-                    case 1 : break;
-                    case 0 : quit= true ;break;
-                }
-            }
+        app = formation.SearchApprenant(login);
+        app.login=nvlogin;
+        app.motDePasse=nvmdp;
     }
-    private void supprimerCompteApprenant(){
-        Compte app;
-        String log;
-        System.out.print("Entrer le login  de l'apprenant : ");
-        sc.nextLine();//en plus car bug
-        log = sc.nextLine();
-        app = formation.SearchApprenant(log);
-        if(formation.groupeApprenant.remove(app))
+    public void supprimerCompteApprenant(String login){
+        try{
+            formation.groupeApprenant.remove(formation.SearchApprenant(login));
             System.out.print("Operation effectue avec succes");
-        else
+        }
+        catch(NullPointerException e){
             System.out.print("Ce login n'existe pas");
+        }
     }
     public void consulterActiviteApprenant() {
-        formation.DisplayApprenant();
+        for(Apprenant a : formation.groupeApprenant){
+            System.out.println(a.login);
+            for (Quiz q: a.tabQuiz){
+                System.out.print(q.title+" accomplissement: "+ q.accomplissement);
+            }
+            System.out.print("\n");
+        }
     }
-    public void supprimerQuestion(){
-
+    public void supprimerQuestion(Question ques){
     }
     public void ajouterQuestion(){
 
@@ -138,17 +67,43 @@ class Formateur extends Compte{
     public void VisualiserQuestion(){
 
     }
-    private void afficherQuiz(){
+    public void afficherQuiz(){
+        formation.DisplayQuiz();
+    }
+    public void modifierQuiz(String tit){
+        try{
+            Quiz qz = formation.SearchQuiz(tit);
+            //modification
+        }
+        catch (NullPointerException  e){
+            System.out.println("le Quiz : "+tit+" n'existe pas! ");
+        }
+
 
     }
-    private void modifierQuiz(){
-
+    public void ajouterQuiz(String tit){
+        try{
+            formation.SearchQuiz(tit);
+        }
+        catch(NullPointerException e){
+            formation.tabQuiz.add(new Quiz());
+        }
     }
-    private void ajouterQuiz(){
-
+    public void supprimerQuiz(String tit){
+        try {
+            formation.tabQuiz.remove(formation.SearchQuiz(tit));
+        }
+        catch (NullPointerException e){
+            System.out.println("Ce Quiz n'existe pas!");
+        }
     }
-    private void supprimerQuiz(){
-
+    public void selectQuiz(String tit){
+        try {
+            quizTemp=formation.SearchQuiz(tit);
+        }
+        catch (NullPointerException e){
+            System.out.println("Ce Quiz n'existe pas!");
+        }
     }
     //aprés l'integration graphique ces methode auront des arguments
 }

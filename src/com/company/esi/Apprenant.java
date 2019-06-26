@@ -1,65 +1,49 @@
 package com.company.esi;
 
+import java.util.List;
 import java.util.Scanner;
 
 class Apprenant extends Compte{
 
 
-    public Apprenant(){
-        super();
+    Apprenant(List<Quiz> tabQuiz,String nom,String prenom,String dateN ){
+        super(nom,prenom,dateN);
         super.type = 0;
+        this.tabQuiz.addAll(tabQuiz);
     }
     private static Scanner sc = new Scanner(System.in);
 
-    @Override
-    public void Menu(){
 
-        int choix ;
-        while(this.connected) {
-            System.out.println(" \n ***Menu Apprenant*** ");
-            System.out.println(" 1- Afficher liste des Quiz ");
-            System.out.println(" 2- Se Deconnecter ");
-            //avoir comment remplir le menu de celui ci ou faire un menu pour chaque quiz
-            choix = sc.nextInt();
-
-            switch (choix) {
-                case 1 : afficherListeQuiz(); break;
-                case 2 : seDeconnecter();  break;
-            }
-        }
-    }
 
     //Attribus
 
-    public Quiz[] tabQuiz;
-    private int nbQuiz;
+    public List<Quiz> tabQuiz;
     public Quiz quizEnCours;
-    public float reussite;
-    private int nbQuizSoumis;
+    private int nbQuizSoumis = 0;
 
     //Methodes
 
 
+
+
     public void afficherListeQuiz(){
-
-    }
-    public Quiz selectionnerQuiz(String notion){
-
-        Quiz quiz= new Quiz();
-        return quiz ;
+        for(Quiz q :tabQuiz){
+            q.DisplaySelf();
+        }
 
     }
     public void visualiserQuiz(Quiz quiz){
-
+        quiz.DisplaySelf();
     }
     public void repondreQuiz(Quiz quiz){
-
-    }
-    public void sauvegarderReponse(Quiz quiz){
-
+        for(Question q : quiz.tabQuestions){
+            q.repondre();
+        }
     }
     public void soumettreEvaluation(Quiz quiz){
-
+        for(Question q : quiz.tabQuestions){
+            q.evaluerReponse();
+        }
     }
 
 

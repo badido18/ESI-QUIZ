@@ -13,11 +13,10 @@ class Qcm extends Question{
 
     //Methodes
 
-    public void evaluerReponse(){
-
+    public int evaluerReponse(){
+        return 1;
     }
     public void repondre(){
-        //selectioner une reponse
     }
 
 }

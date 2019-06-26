@@ -5,15 +5,13 @@ abstract class Question{
     //Attribus
 
     private String  type;
+    public int numero;
     private String enonce;
+    public String reponse;
 
     //Methodes
 
-    public void evaluerReponse(){
-
-    }
-    public void repondre(){
-        //selectioner une reponse
-    }
+    abstract int  evaluerReponse();
+    abstract void repondre();
 
 }

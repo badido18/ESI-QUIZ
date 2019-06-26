@@ -6,10 +6,10 @@ abstract class Compte{
 
     //Constructeur
 
-    Compte(){
-        setNom();
-        setPreNom();
-        setDateNaissance();
+    Compte(String nom, String prenom, String dateNaissance){
+        this.Nom=nom;
+        this.preNom=prenom;
+        this.dateNaissance=dateNaissance;
         defineloginDefault();
         defineMotDePasseDefault();
         DisplayLogin();
@@ -28,20 +28,6 @@ abstract class Compte{
     public boolean connected =false;
 
     //methodes
-        static Scanner sc = new Scanner(System.in);
-    public void setNom(){
-
-        System.out.println("Veuillez entrer votre nom : ");
-        Nom= sc.nextLine();
-    }
-    public void setPreNom(){
-        System.out.println("Veuillez entrer votre prenom : ");
-        preNom= sc.nextLine();
-    }
-    public void setDateNaissance(){
-        System.out.println("Veuillez entrer votre date de naissance format (jj/mm/aaaa) : ");
-        dateNaissance= sc.nextLine();
-    }
 
     private void defineloginDefault(){
         login = preNom ;
@@ -53,28 +39,16 @@ abstract class Compte{
     }
 
 
-    public void setLogin(){
-        System.out.println("Veuillez entrer votre nouveau login: ");
-        login= sc.nextLine();
-    }
-    public void setMotDePasse(){
-        System.out.println("Veuillez entrer votre nouveau mot de passe : ");
-        motDePasse= sc.nextLine();
-    }
-
-
     public void DisplayLogin(){
         System.out.println("Vos information : ");
         System.out.println("Login : "+login);
         System.out.println("MDP : "+motDePasse);
     }
 
-    protected void seDeconnecter(){
+    public void seDeconnecter(){
         this.connected=false;
     }
 
-    //methode abstraite
-    abstract public void Menu();
 
 
 }

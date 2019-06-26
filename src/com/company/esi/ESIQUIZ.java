@@ -10,29 +10,18 @@ class ESIQUIZ{
     //Attribus
 
     private Formateur[] tabFomrateurs = new Formateur[1];
-    private Compte compteConnecte;
+    public Compte compteConnecte;
     private static Scanner sc = new Scanner(System.in);
 
     //Methodes
 
-    private void seConecter(){
-        int type;
-        String login,mdp;
-        System.out.print("Vous etes 1 Formateur / 2 Apprenant  :  ");
-        type= sc.nextInt();
-        sc.nextLine();//afin d'eviter le bug de retour de ligne
-        System.out.println("Veuillez introduire votre Login : ");
-        login = sc.nextLine();
-        System.out.print("Mot De Passe : ");
-        mdp = sc.nextLine();
-
+    private void seConecter(String login, String mdp,int type){
         try{
             switch(type){
                 case 1 : compteConnecte = SearchFormateur(login,mdp);break;
                 case 2 : compteConnecte = SearchApprenant(login,mdp);break;
             }
             compteConnecte.connected=true;
-            Session(compteConnecte);
         }
         catch( NullPointerException e) {
             System.out.println("la Connexion a echoue (login ou mot de passe incorrect)");
@@ -47,7 +36,7 @@ class ESIQUIZ{
             return null;
     }
     private Compte SearchApprenant(String login, String mdp){
-        if(tabFomrateurs[0]!=null)
+        if(tabFomrateurs[0]!=null)//exception
             return tabFomrateurs[0].formation.SearchApprenant(login,mdp);
         else{
             System.out.println("Message d'erreur : Aucun Formateur n'a ete cree ");
@@ -65,35 +54,7 @@ class ESIQUIZ{
     private void afficherResultat(Apprenant apprenant){
 
     }
-    private void creerCompteFormateur(){
-        tabFomrateurs[0]= new Formateur();
+    private void creerCompteFormateur(String nom,String prenom,String dateN){
+        tabFomrateurs[0]= new Formateur(nom,prenom,dateN);
     }
-    public void menuPrincipale(){
-
-        int option;
-
-        System.out.println("***Menu Beta test***");
-        System.out.println("1-creer compte fomrateur");
-        System.out.println("2-Se connecter a un compte");
-        System.out.println("0-Quitter");
-
-        option = sc.nextInt();
-        switch(option)
-        {
-            case 1 :  creerCompteFormateur(); break;
-            case 2 :  seConecter(); break;
-            case 0 :
-                System.out.println(" \n ***Fermeture du programme ! :) *** ");
-                System.exit(0); //exit
-            default : break;
-        }
-    }
-    public void Session(Compte cmp){
-        System.out.println(" Ouverture de la session : ");
-        while (cmp.connected){
-            cmp.Menu();
-        }
-        System.out.println(" Fin de la Session ! ");
-    }
-
 }

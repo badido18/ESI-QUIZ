@@ -4,16 +4,18 @@ class Qo extends Question{
 
     //Attribus
 
-    private String[] bonnereponse;
+    private String bonnereponse;
     private String reponse;
 
     //Methodes
 
-    public void evaluerReponse(){
-
+    public int evaluerReponse(){
+        if(reponse.equals(bonnereponse))
+            return 1 ;
+        return 0 ;
     }
-    public void repondre(){
-        //selectioner une reponse
+    public void repondre(String userReponse){
+        reponse=userReponse;
     }
 
 }

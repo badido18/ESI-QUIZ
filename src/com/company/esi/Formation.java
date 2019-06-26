@@ -47,6 +47,14 @@ class Formation{
         return null;
     }
 
+    public Quiz SearchQuiz(String title){
+        for (Quiz o : tabQuiz) {
+            if(o.title.equals(title) )
+                return o;
+        }
+        return null;
+    }
+
     public void DisplayApprenant(){
         Apprenant tmp ;
         Iterator<Apprenant> it = groupeApprenant.iterator();
@@ -59,11 +67,29 @@ class Formation{
 
     public void avoirClassement(){
 
-    }
-    public void avoirTauxresultat(){
+        List<Apprenant> tmp = new ArrayList<>();
+        tmp.addAll(groupeApprenant);
+        }
 
+
+
+    private float avoirTauxresultat(Apprenant apprenant){
+        //calcul le taux de de russite
+        return 0;
     }
     public void mettreAjourQuiz(){
+        //charge les modification du formateur au apprenant
+        for (Apprenant o: groupeApprenant ){
+
+        }
 
     }
+    public void DisplayQuiz(){
+            for(Quiz q : tabQuiz){
+                q.DisplaySelf();
+            }
+
+    }
+
+
 }
