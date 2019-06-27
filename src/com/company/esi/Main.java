@@ -73,6 +73,8 @@ public class Main {
         q.soumettreQuiz();
         //mettre a evaluation
         apr.soumettreEvaluation(q);
+        f.formation.avoirTauxresultat();
+
         //afficher activité d'un apprenant
         f.consulterActiviteApprenant(apr);
         //avoir le classement

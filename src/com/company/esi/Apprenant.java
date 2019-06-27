@@ -48,9 +48,9 @@ class Apprenant extends Compte{
     }
     public void soumettreEvaluation(Quiz quiz){
         for(Question q : quiz.tabQuestions){
-            reussGenreale+=q.evaluerReponse();
+            quiz.reussite+=q.evaluerReponse();
         }
-        reussGenreale/=quiz.tabQuestions.size();
+        quiz.reussite/=quiz.tabQuestions.size();
     }
 
 

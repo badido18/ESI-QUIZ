@@ -6,15 +6,6 @@
       <change beforePath="$PROJECT_DIR$/src/com/company/esi/Formateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/esi/Formateur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/esi/Formation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/esi/Formation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/esi/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/esi/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/esi/Notion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/esi/Notion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/esi/Qcm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/esi/Qcm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/esi/Qcu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/esi/Qcu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/esi/Qo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/esi/Qo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/esi/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/esi/Quiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/esi/Reponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/esi/Reponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/esi/ReponseQCM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/esi/ReponseQCM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/esi/ReponseQCU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/esi/ReponseQCU.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/esi/ReponseQO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/esi/ReponseQO.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,16 +16,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/esi/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
+            <state relative-caret-position="330">
+              <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1493#1501#0" expanded="true" />
                 <element signature="e#1592#1601#0" expanded="true" />
                 <element signature="e#2843#2852#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/esi/Apprenant.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#743#744#0" expanded="true" />
+                <element signature="e#777#778#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -73,8 +78,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/esi/Quiz.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
+            <state relative-caret-position="-299">
               <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/esi/Formation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-291">
+              <caret line="61" column="28" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/company/esi/Formateur.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="136" column="11" lean-forward="true" selection-start-line="136" selection-start-column="11" selection-end-line="136" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,12 +155,12 @@
         <option value="$PROJECT_DIR$/src/com/company/esi/ReponseQO.java" />
         <option value="$PROJECT_DIR$/src/com/company/esi/ReponseQCU.java" />
         <option value="$PROJECT_DIR$/src/com/company/esi/ReponseQCM.java" />
-        <option value="$PROJECT_DIR$/src/com/company/esi/Apprenant.java" />
-        <option value="$PROJECT_DIR$/src/com/company/esi/Formateur.java" />
         <option value="$PROJECT_DIR$/src/com/company/esi/Quiz.java" />
-        <option value="$PROJECT_DIR$/src/com/company/esi/Formation.java" />
         <option value="$PROJECT_DIR$/src/com/company/esi/Qcm.java" />
         <option value="$PROJECT_DIR$/src/com/company/esi/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/company/esi/Apprenant.java" />
+        <option value="$PROJECT_DIR$/src/com/company/esi/Formation.java" />
+        <option value="$PROJECT_DIR$/src/com/company/esi/Formateur.java" />
       </list>
     </option>
   </component>
@@ -186,7 +215,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561645010133" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561646655775" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -244,18 +273,18 @@
       <workItem from="1561550829469" duration="2918000" />
       <workItem from="1561573055995" duration="16695000" />
       <workItem from="1561625869719" duration="8691000" />
-      <workItem from="1561637495109" duration="7502000" />
+      <workItem from="1561637495109" duration="9146000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56074000" />
+    <option name="totallyTimeSpent" value="57718000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18609625" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18609625" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -387,16 +416,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/esi/Formateur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/esi/Question.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -427,28 +446,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/esi/Formation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="87" column="13" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/esi/Apprenant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1196">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#777#778#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/esi/Qcu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -475,8 +472,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/esi/Quiz.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
+        <state relative-caret-position="-299">
           <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/esi/Apprenant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#743#744#0" expanded="true" />
+            <element signature="e#777#778#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/esi/Formation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-291">
+          <caret line="61" column="28" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -485,13 +504,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/esi/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
+        <state relative-caret-position="330">
+          <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1493#1501#0" expanded="true" />
             <element signature="e#1592#1601#0" expanded="true" />
             <element signature="e#2843#2852#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/esi/Formateur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="136" column="11" lean-forward="true" selection-start-line="136" selection-start-column="11" selection-end-line="136" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -71,7 +71,7 @@ class Formation{
         for(Apprenant a : groupeApprenant){
             System.out.println(a.login);
             for (Quiz q: a.tabQuiz){
-                System.out.print(q.title+" accomplissement: "+ a.accompGenerale*100 +" Reussite : " +a.reussGenreale*100);
+                System.out.print(q.title+" accomplissement: "+ q.accomplissement*100 +" Reussite : " +q.reussite*100);
             }
             System.out.print("\n");
         };
@@ -80,7 +80,7 @@ class Formation{
 
 
 
-    private void avoirTauxresultat(){
+    public void avoirTauxresultat(){
         for (Apprenant a : groupeApprenant){
 
             for(Quiz q:a.tabQuiz){

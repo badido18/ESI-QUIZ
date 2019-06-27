@@ -1,5 +1,5 @@
 package com.company.esi;
-
+import java.lang.Cloneable;
 import sun.security.krb5.internal.APRep;
 
 import java.util.List;
@@ -134,7 +134,8 @@ class Formateur extends Compte{
     }
     public void ajoutQuizToApp(){
         for(Apprenant a: formation.groupeApprenant){
-            a.tabQuiz.addAll(formation.tabQuiz);
+           a.tabQuiz.addAll(formation.tabQuiz);
+            //a.tabQuiz = formation.tabQuiz;
         }
     }
 }
