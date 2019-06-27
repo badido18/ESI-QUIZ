@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Qcm extends Question{
-        Qcm(String enonce,List<String> propo ,List<Integer> nbpropojuste){
+        Qcm(String enonce,List<String> propo ,List<Integer> nbpropojuste,int numero){
             this.enonce=enonce;
             this.propositions=propo;
             this.bonneReponses = nbpropojuste;
+            this.numero=numero;
     }
 
 

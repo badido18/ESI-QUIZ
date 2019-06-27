@@ -67,7 +67,7 @@ class Formation{
             }
         };
         Collections.sort(groupeApprenant,compareById);
-
+        Collections.reverse(groupeApprenant);
         for(Apprenant a : groupeApprenant){
             System.out.println(a.login);
             for (Quiz q: a.tabQuiz){

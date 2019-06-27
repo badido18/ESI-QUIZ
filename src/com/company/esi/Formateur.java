@@ -135,13 +135,13 @@ class Formateur extends Compte{
             }
         }
     }
-    public void ajoutQuizToApp(){
-        for(Apprenant a: formation.groupeApprenant){
-           //a.tabQuiz.addAll(formation.tabQuiz);
-            ArrayList<Quiz> tmp = new ArrayList<>();
-            tmp = (ArrayList<Quiz>) formation.tabQuiz;
-            a.tabQuiz= (ArrayList<Quiz>) tmp.clone();
-            System.out.println(" ");
+    public void ajoutQuizToApp() {
+        for (Apprenant a : formation.groupeApprenant) {
+            for ( Quiz q :formation.tabQuiz){
+                Quiz newquiz = new Quiz(q.title,q.dateOuverture,q.dateExpiration);
+                newquiz.tabQuestions.addAll(q.tabQuestions);
+                a.tabQuiz.add(newquiz);
+            }
         }
     }
 }

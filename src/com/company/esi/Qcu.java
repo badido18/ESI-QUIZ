@@ -3,10 +3,12 @@ package com.company.esi;
 import java.util.List;
 
 class Qcu extends Question {
-    Qcu(String enonce,List<String> propo,int bonnerep){
+    Qcu(String enonce,List<String> propo,int bonnerep,int numero){
         this.enonce=enonce ;
         this.propositions=propo;
         this.bonnereponse=bonnerep;
+        this.numero=numero;
+
     }
 
     //Attribus

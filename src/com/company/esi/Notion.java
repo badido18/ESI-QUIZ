@@ -17,20 +17,19 @@ public class Notion {
     public int nbQuestions=0;
 
     public void ajouterQCU(String enonce,List<String> propo,int bonnerep){
-        tabQues.add(new Qcu(enonce,propo,bonnerep));
+        tabQues.add(new Qcu(enonce,propo,bonnerep,nbQuestions));
         nbQuestions++;
     }
     public void ajouterQO(String enonce,String reponse){
-        tabQues.add(new Qo(enonce,reponse));
+        tabQues.add(new Qo(enonce,reponse,nbQuestions));
         nbQuestions++;
     }
     public void ajouterQCM(String enonce,List<String> propo ,List<Integer> nbpropojuste){
-        tabQues.add(new Qcm(enonce,propo,nbpropojuste));
+        tabQues.add(new Qcm(enonce,propo,nbpropojuste,nbQuestions));
         nbQuestions++;
     }
     public void suprimerQuestion(int numero){
         tabQues.remove(tabQues.get(numero));
-        nbQuestions--;
     }
     public void modifierQuestion(int numero,String enonce){
         tabQues.get(numero).enonce=enonce;

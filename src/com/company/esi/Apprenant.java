@@ -42,9 +42,9 @@ class Apprenant extends Compte{
             q.Afficher();
             q.repondre(R.get(i));
             i++;
-            accompGenerale++;
+            quiz.accomplissement++;
         }
-        accompGenerale/=quiz.tabQuestions.size();
+        quiz.accomplissement/=quiz.tabQuestions.size();
     }
     public void soumettreEvaluation(Quiz quiz){
         for(Question q : quiz.tabQuestions){

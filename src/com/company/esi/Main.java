@@ -40,7 +40,7 @@ public class Main {
         List<Integer> projuste = new ArrayList<Integer>(Arrays.asList(1,2));
         notion.ajouterQCM("QCM",propo,projuste);
         notion.ajouterQCU("QCU",propo,2);
-        notion.ajouterQO("QO","bonnerep");
+        notion.ajouterQO("QO enonce","bonnerep");
         notion.ajouterQO("QO2","bonnerep2");
         //supression dune question
         notion.suprimerQuestion(3);
@@ -75,9 +75,11 @@ public class Main {
         apr.soumettreEvaluation(q);
         f.formation.avoirTauxresultat();
 
-        //afficher activité d'un apprenant
+        //afficher activité d'un apprenant specifique
+        System.out.print("activité apprenant :");
         f.consulterActiviteApprenant(apr);
         //avoir le classement
+        System.out.println("Classement :");
         f.formation.avoirClassement();
     }
 }

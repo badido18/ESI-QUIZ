@@ -1,9 +1,11 @@
 package com.company.esi;
 
 class Qo extends Question{
-    Qo(String enonce,String reponse){
+    Qo(String enonce,String reponse,int numero){
         this.enonce=enonce;
         this.reponse=reponse;
+        this.numero=numero;
+
     }
 
     //Attribus

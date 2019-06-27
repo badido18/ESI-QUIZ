@@ -24,8 +24,8 @@ class Quiz{
     private List<Notion> tabNotion = new ArrayList<>();
     public List<Question> tabQuestions=new ArrayList<>();
     private int nbquestion;
-    private String dateOuverture;
-    private String dateExpiration;
+    public String dateOuverture;
+    public String dateExpiration;
     private int nbNotions;
     public float accomplissement=0 ;
     public float reussite=0;
