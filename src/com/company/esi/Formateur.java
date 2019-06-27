@@ -1,7 +1,10 @@
 package com.company.esi;
 import java.lang.Cloneable;
+
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import sun.security.krb5.internal.APRep;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -134,8 +137,11 @@ class Formateur extends Compte{
     }
     public void ajoutQuizToApp(){
         for(Apprenant a: formation.groupeApprenant){
-           a.tabQuiz.addAll(formation.tabQuiz);
-            //a.tabQuiz = formation.tabQuiz;
+           //a.tabQuiz.addAll(formation.tabQuiz);
+            ArrayList<Quiz> tmp = new ArrayList<>();
+            tmp = (ArrayList<Quiz>) formation.tabQuiz;
+            a.tabQuiz= (ArrayList<Quiz>) tmp.clone();
+            System.out.println(" ");
         }
     }
 }
