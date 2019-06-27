@@ -14,8 +14,8 @@ class Qo extends Question{
             return 1 ;
         return 0 ;
     }
-    public void repondre(ReponseQO R){
-        reponse=R.rep;
+    public void repondre(Reponse R){
+        reponse=R.repS;
         accompli=true;
     }
     public void Afficher(){

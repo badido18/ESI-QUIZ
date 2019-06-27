@@ -19,7 +19,7 @@ class Qcu extends Question {
         return 0;
     }
 
-    public void repondre(ReponseQCU R){
+    public void repondre(Reponse R){
         reponseSelectione= R.rep;
         accompli=true;
 

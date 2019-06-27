@@ -1,5 +1,6 @@
 package com.company.esi;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -17,9 +18,11 @@ class Apprenant extends Compte{
 
     //Attribus
 
-    public List<Quiz> tabQuiz;
+    public List<Quiz> tabQuiz = new ArrayList<>();
     public Quiz quizEnCours;
     private int nbQuizSoumis = 0;
+    public float accompGenerale=0;
+    public float reussGenreale=0;
 
     //Methodes
 
@@ -33,9 +36,12 @@ class Apprenant extends Compte{
     public void visualiserQuiz(Quiz quiz){
         quiz.DisplaySelf();
     }
-    public void repondreQuiz(Quiz quiz){
+    public void repondreQuiz(Quiz quiz,List<Reponse> R){
+        int i = 0 ;
         for(Question q : quiz.tabQuestions){
-            q.repondre();
+            q.Afficher();
+            q.repondre(R.get(i));
+            i++;
         }
     }
     public void soumettreEvaluation(Quiz quiz){

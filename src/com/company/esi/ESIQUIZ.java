@@ -9,7 +9,7 @@ class ESIQUIZ{
 
     //Attribus
 
-    private Formateur[] tabFomrateurs = new Formateur[1];
+    public Formateur[] tabFomrateurs = new Formateur[1];
     public Compte compteConnecte;
     private static Scanner sc = new Scanner(System.in);
 
@@ -19,7 +19,7 @@ class ESIQUIZ{
         try{
             switch(type){
                 case 1 : compteConnecte = SearchFormateur(login,mdp);break;
-                case 2 : compteConnecte = SearchApprenant(login,mdp);break;
+                case 0 : compteConnecte = SearchApprenant(login,mdp);break;
             }
             compteConnecte.connected=true;
         }
@@ -44,7 +44,7 @@ class ESIQUIZ{
         }
     }
 
-    private void creerCompteFormateur(String nom,String prenom,String dateN){
+    public void creerCompteFormateur(String nom,String prenom,String dateN){
         tabFomrateurs[0]= new Formateur(nom,prenom,dateN);
     }
 }

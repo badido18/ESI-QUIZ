@@ -28,7 +28,7 @@ class Qcm extends Question{
         }
         return sum/nbreponsesSelectiones;
     }
-    public void repondre(ReponseQCM R){
+    public void repondre(Reponse R){
         reponseSelectiones.addAll(R.listrep);
         nbreponsesSelectiones=reponseSelectiones.size();
         accompli=true;

@@ -3,15 +3,11 @@ import java.util.*;
 
 class Formation{
 
-    Formation(){
-        System.out.print("Nommer la formation : ");
-        nom=sc.nextLine();
-        System.out.println("Description :");
-        description=sc.nextLine();
-        System.out.print("Date de Debut ( jj/mm/aaaa)");
-        dateDebut=sc.nextLine();
-        System.out.print("Date de Fin ( jj/mm/aaaa)");
-        dateFin =sc.nextLine();
+    Formation(String nom,String Des,String DD,String DF){
+        this.nom=nom;
+        this.description=Des;
+        this.dateDebut=DD;
+        this.dateFin=DF;
         System.out.println("*** Formation cree avec succes *** ");
     }
 
@@ -19,22 +15,17 @@ class Formation{
 
     public List<Apprenant> groupeApprenant = new ArrayList<>() ;
     public int nbapprenant = 0;
-    public List<Quiz> tabQuiz;
+    public List<Quiz> tabQuiz = new ArrayList<>();
     private String nom ;
     private String description ;
     private String dateDebut ;
     private String dateFin ;
-    private Scanner sc = new Scanner(System.in);
     //Methodes
 
     public Compte SearchApprenant(String login, String mdp){
-        Apprenant tmp ;
-        Iterator<Apprenant> it = groupeApprenant.iterator();
-        while (it.hasNext()) {
-            tmp=it.next();
-            if(tmp.login.equals(login) && tmp .motDePasse.equals(mdp))
-                return tmp;
-
+        for(Apprenant a : groupeApprenant) {
+            if(a.login.equals(login) && a.motDePasse.equals(mdp))
+                return a;
         }
         return null;
     }
@@ -66,15 +57,25 @@ class Formation{
 
 
     public void avoirClassement(){
+            for (Apprenant a : groupeApprenant){
+                
+            }
 
-        List<Apprenant> tmp = new ArrayList<>();
-        tmp.addAll(groupeApprenant);
         }
 
 
 
     private float avoirTauxresultat(Apprenant apprenant){
-        //calcul le taux de de russite
+        for (Apprenant a : groupeApprenant){
+
+            for(Quiz q:a.tabQuiz){
+                a.accompGenerale+=q.accomplissement;
+                a.reussGenreale+=q.reussite;
+            }
+            a.accompGenerale/=tabQuiz.size();
+            a.reussGenreale/=tabQuiz.size();
+
+        }
         return 0;
     }
     public void mettreAjourQuiz(){

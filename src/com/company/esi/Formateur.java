@@ -18,9 +18,8 @@ class Formateur extends Compte{
     //Methodes
 
 
-    public void creerFormation(){
-        formation = new Formation();
-        //il peut creer une seule
+    public void creerFormation(String nom,String Des,String DD,String DF){
+        formation = new Formation(nom,Des,DD,DF);
     }
     public void creerCompteApprenant(String nom, String prenom, String dateN){
         try{
@@ -28,7 +27,7 @@ class Formateur extends Compte{
             formation.groupeApprenant.add(new Apprenant(formation.tabQuiz,nom,prenom,dateN));
         }
         catch(NullPointerException e){
-            System.out.println("Aucune formation n'as ete cree ! ( Veuillez creer une formation avant )");
+            System.out.println("Aucune formation ou quiz n'as ete cree ! ( Veuillez creer une formation avant )");
         }
 
     }
@@ -41,13 +40,14 @@ class Formateur extends Compte{
     public void supprimerCompteApprenant(String login){
         try{
             formation.groupeApprenant.remove(formation.SearchApprenant(login));
-            System.out.print("Operation effectue avec succes");
+            System.out.println("Operation effectue avec succes");
         }
         catch(NullPointerException e){
-            System.out.print("Ce login n'existe pas");
+            System.out.println("Ce login n'existe pas");
         }
     }
     public void consulterActiviteApprenant() {
+        System.out.println("Les comptes : ");
         for(Apprenant a : formation.groupeApprenant){
             System.out.println(a.login);
             for (Quiz q: a.tabQuiz){
@@ -55,6 +55,14 @@ class Formateur extends Compte{
             }
             System.out.print("\n");
         }
+        System.out.println("FIn de la liste");
+    }
+    public void consulterActiviteApprenant(Apprenant a) {
+        System.out.println(a.login);
+            for (Quiz q: a.tabQuiz){
+                System.out.print(q.title+" accomplissement  "+ q.accomplissement*100 +" Reussite : " +q.reussite*100);
+            }
+            System.out.print("\n");
     }
     public void supprimerQuestion(Question ques,Quiz q){
         q.tabQuestions.remove(ques);

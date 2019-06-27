@@ -15,5 +15,6 @@ abstract class Question{
     public  void  Afficher(){
         System.out.print("Question numero :" +numero + "\n"+enonce);
     }
+    abstract void repondre(Reponse R);
 
 }

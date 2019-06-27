@@ -7,6 +7,9 @@ import java.util.Scanner;
 
 class Quiz{
 
+    Quiz(){
+
+    }
     Quiz(String titre,String dateOuverture,String dateExpiration){
         //constructeur
         this.title = titre;
