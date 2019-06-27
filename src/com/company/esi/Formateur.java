@@ -100,18 +100,17 @@ class Formateur extends Compte{
 
     }
     public void ajouterQuiz(String tit,String dateO,String dateE){
-        try{
-            formation.SearchQuiz(tit);
+        if(formation.SearchQuiz(tit)== null) {
+            formation.tabQuiz.add(new Quiz(tit, dateE, dateO));
+            System.out.println("quiz ajoute avec succes");
         }
-        catch(NullPointerException e){
-            formation.tabQuiz.add(new Quiz(tit,dateE,dateO));
-        }
+
     }
     public void supprimerQuiz(String tit){
         try {
             formation.tabQuiz.remove(formation.SearchQuiz(tit));
         }
-        catch (NullPointerException e){
+        catch(NullPointerException e){
             System.out.println("Ce Quiz n'existe pas!");
         }
     }
@@ -133,10 +132,6 @@ class Formateur extends Compte{
             }
         }
     }
-    public void AddQuiztmp(){
-        formation.tabQuiz.add(quizTemp);
-    }
-
     public void ajoutQuizToApp(){
         for(Apprenant a: formation.groupeApprenant){
             a.tabQuiz.addAll(formation.tabQuiz);

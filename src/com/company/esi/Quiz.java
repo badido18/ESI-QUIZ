@@ -2,6 +2,7 @@ package com.company.esi;
 
 import javafx.geometry.NodeOrientation;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -20,14 +21,14 @@ class Quiz{
     //Attribus
     private Scanner sc = new Scanner(System.in);
     public String title;
-    private List<Notion> tabNotion;
-    public List<Question> tabQuestions;
+    private List<Notion> tabNotion = new ArrayList<>();
+    public List<Question> tabQuestions=new ArrayList<>();
     private int nbquestion;
     private String dateOuverture;
     private String dateExpiration;
     private int nbNotions;
     public float accomplissement=0 ;
-    public float reussite;
+    public float reussite=0;
     private boolean soumis;
 
     //Methodes
@@ -43,7 +44,7 @@ class Quiz{
             if(q.accompli=true)
                 accomplissement++;
         }
-        accomplissement/=nbquestion;
+        accomplissement/=tabQuestions.size();
     }
     public void evaluerQuiz(){
         float pt=0;

@@ -32,11 +32,14 @@ public class Main {
         f.ajouterQuiz("quiz1","12052019","25122019");
         f.ajouterQuiz("quiz2","12052019","25122019");
         f.selectQuiz("quiz1");
+
         //ajout notion
         Notion notion=new Notion("notion1");
         //ajout 3 question de la notion
-        notion.ajouterQCM("QCM",new ArrayList<String>(Arrays.asList("propo1","propo2","propo3")),new ArrayList<Integer>(Arrays.asList(1,2)));
-        notion.ajouterQCU("QCU",new ArrayList<String>(Arrays.asList("propo1","propo2","propo3")),2);
+        List<String>  propo = new ArrayList<String>(Arrays.asList("propo1","propo2","propo3"));
+        List<Integer> projuste = new ArrayList<Integer>(Arrays.asList(1,2));
+        notion.ajouterQCM("QCM",propo,projuste);
+        notion.ajouterQCU("QCU",propo,2);
         notion.ajouterQO("QO","bonnerep");
         notion.ajouterQO("QO2","bonnerep2");
         //supression dune question
@@ -45,27 +48,25 @@ public class Main {
         notion.modifierQuestion(1,"nouvel enonce");
         //supprimer quiz
         f.supprimerQuiz("quiz2");
-        //ajout notion au quiz
+        //ajout notion au quiz //quizTemp.genererQuiz(notion);
         f.quizTemp.ajouterNotion(notion);
-        //ajout du quiztemp au tab
-        f.AddQuiztmp();
 
-
-        //sauvegarde
+        //sauvegarde pur l'appenant
         f.ajoutQuizToApp();
         //Connexion a un compte apprenant
         f.seDeconnecter();
         application.seConecter("ahmed1","yahiaoui99",0);
         Apprenant apr = (Apprenant)application.compteConnecte;
         //selectioner le quiz
-        Quiz q = apr.tabQuiz.get(f.formation.tabQuiz.indexOf(f.formation.SearchQuiz("Quiz1")));
+        Quiz q = apr.tabQuiz.get(f.formation.tabQuiz.indexOf(f.formation.SearchQuiz("quiz1")));
+
         //l'apprenant repond au quiz
         //affichage du quiz;
         apr.visualiserQuiz(q);
         //creation des reponses
-        ReponseQCU rqcu = new ReponseQCU(1);
+        ReponseQCU rqcu = new ReponseQCU(2);
         ReponseQO rqo = new ReponseQO("bonnerep");
-        ReponseQCM rqcm = new ReponseQCM(new ArrayList<>(Arrays.asList(1,2)));
+        ReponseQCM rqcm = new ReponseQCM(new ArrayList<Integer>(Arrays.asList(1,2)));
         List<Reponse>  listereponse = new ArrayList<Reponse>(Arrays.asList(rqcm,rqcu,rqo));
         apr.repondreQuiz(q,listereponse);
         //soummetre le quiz
@@ -74,7 +75,7 @@ public class Main {
         apr.soumettreEvaluation(q);
         //afficher activité d'un apprenant
         f.consulterActiviteApprenant(apr);
-        //avoir le calssement
+        //avoir le classement
         f.formation.avoirClassement();
     }
 }

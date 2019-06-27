@@ -3,18 +3,23 @@ package com.company.esi;
 import java.util.List;
 
 class Qcu extends Question {
+    Qcu(String enonce,List<String> propo,int bonnerep){
+        this.enonce=enonce ;
+        this.propositions=propo;
+        this.bonnereponse=bonnerep;
+    }
 
     //Attribus
 
     private List<String> propositions;
     private int nbpropositions;
-    private String bonnereponse;
+    private int  bonnereponse;
     private int reponseSelectione;
 
     //Methodes
 
     public float evaluerReponse(){
-        if( bonnereponse.equals(propositions.get(reponseSelectione)) )
+        if( propositions.get(bonnereponse).equals(propositions.get(reponseSelectione)) )
             return  1 ;
         return 0;
     }

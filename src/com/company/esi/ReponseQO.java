@@ -12,7 +12,6 @@ public class ReponseQO extends Reponse {
         this.repS=reps;
     }
 
-        public String repS;
 
         public void remplirReponse(String rep){
             this.repS=rep;

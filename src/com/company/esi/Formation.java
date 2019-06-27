@@ -71,7 +71,7 @@ class Formation{
         for(Apprenant a : groupeApprenant){
             System.out.println(a.login);
             for (Quiz q: a.tabQuiz){
-                System.out.print(q.title+" accomplissement: "+ q.accomplissement*100 +" Reussite : " +q.reussite*100);
+                System.out.print(q.title+" accomplissement: "+ a.accompGenerale*100 +" Reussite : " +a.reussGenreale*100);
             }
             System.out.print("\n");
         };
@@ -84,10 +84,8 @@ class Formation{
         for (Apprenant a : groupeApprenant){
 
             for(Quiz q:a.tabQuiz){
-                a.accompGenerale+=q.accomplissement;
                 a.reussGenreale+=q.reussite;
             }
-            a.accompGenerale/=tabQuiz.size();
             a.reussGenreale/=tabQuiz.size();
 
         }

@@ -1,32 +1,46 @@
 package com.company.esi;
 
+import java.util.ArrayList;
 import java.util.List;
 
 class Qcm extends Question{
+        Qcm(String enonce,List<String> propo ,List<Integer> nbpropojuste){
+            this.enonce=enonce;
+            this.propositions=propo;
+            this.bonneReponses = nbpropojuste;
+    }
+
 
     //Attribus
 
-    private List<String> propositions ;
+    private List<String> propositions= new ArrayList<>();
     public int nbpropositions;
-    private List<Integer> bonneReponses;
+    private List<Integer> bonneReponses = new ArrayList<>();
     private int nbBonnereponses;
-    private List<Integer> reponseSelectiones;
+    private List<Integer> reponseSelectiones =new ArrayList<>() ;
     private int nbreponsesSelectiones;
 
     //Methodes
 
     public float evaluerReponse(){
-        float sum=propositions.size();
-        for(Integer a: reponseSelectiones)
-        {
-            for(Integer b : bonneReponses){
-                if(a.equals(b)){
-                    sum-=2;
-                    break;
-                }
+        int sum=0;
+        for (int i = 0; i <propositions.size() ; i++) {
+            if(reponseSelectiones.contains(i)){
+                if (bonneReponses.contains(i))
+                    sum++;
+                else
+                    sum--;
+
+            }
+            else{
+                if (bonneReponses.contains(i))
+                    sum--;
+                else
+                    sum++;
+
             }
         }
-        return sum/nbreponsesSelectiones;
+        return sum/propositions.size();
     }
     public void repondre(Reponse R){
         reponseSelectiones.addAll(R.listrep);

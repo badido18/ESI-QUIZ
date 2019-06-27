@@ -10,7 +10,6 @@ public class ReponseQCU extends Reponse {
     ReponseQCU(int reps){
         this.rep=reps;
     }
-        public int rep;
 
         public void remplirReponse(int n){
             rep=n;
