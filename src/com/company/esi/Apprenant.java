@@ -24,8 +24,6 @@ class Apprenant extends Compte{
     //Methodes
 
 
-
-
     public void afficherListeQuiz(){
         for(Quiz q :tabQuiz){
             q.DisplaySelf();

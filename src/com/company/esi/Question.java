@@ -8,10 +8,12 @@ abstract class Question{
     public int numero;
     private String enonce;
     public String reponse;
-
+    public boolean accompli=false;
     //Methodes
 
-    abstract int  evaluerReponse();
-    abstract void repondre();
+    abstract float  evaluerReponse();
+    public  void  Afficher(){
+        System.out.print("Question numero :" +numero + "\n"+enonce);
+    }
 
 }

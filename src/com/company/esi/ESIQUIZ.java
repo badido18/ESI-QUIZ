@@ -15,7 +15,7 @@ class ESIQUIZ{
 
     //Methodes
 
-    private void seConecter(String login, String mdp,int type){
+    public void seConecter(String login, String mdp,int type){
         try{
             switch(type){
                 case 1 : compteConnecte = SearchFormateur(login,mdp);break;
@@ -44,16 +44,6 @@ class ESIQUIZ{
         }
     }
 
-    private Quiz generationCopieReponse(Quiz quiz){
-        quiz= new Quiz();
-        return quiz ;
-    }
-    private void evaluationAuto(Quiz quizTermine){
-
-    }
-    private void afficherResultat(Apprenant apprenant){
-
-    }
     private void creerCompteFormateur(String nom,String prenom,String dateN){
         tabFomrateurs[0]= new Formateur(nom,prenom,dateN);
     }

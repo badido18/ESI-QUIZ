@@ -1,5 +1,6 @@
 package com.company.esi;
 
+import java.util.List;
 import java.util.Scanner;
 
 class Formateur extends Compte{
@@ -15,7 +16,6 @@ class Formateur extends Compte{
     private Quiz quizTemp;
 
     //Methodes
-
 
 
     public void creerFormation(){
@@ -51,21 +51,29 @@ class Formateur extends Compte{
         for(Apprenant a : formation.groupeApprenant){
             System.out.println(a.login);
             for (Quiz q: a.tabQuiz){
-                System.out.print(q.title+" accomplissement: "+ q.accomplissement);
+                System.out.print(q.title+" accomplissement: "+ q.accomplissement*100 +" Reussite : " +q.reussite*100);
             }
             System.out.print("\n");
         }
     }
-    public void supprimerQuestion(Question ques){
+    public void supprimerQuestion(Question ques,Quiz q){
+        q.tabQuestions.remove(ques);
     }
-    public void ajouterQuestion(){
-
+    public void ajouterQuestion(Question ques, Quiz q){
+        q.tabQuestions.add(ques);
     }
-    public void modifierQuestion(){
-
+    public void modifierQuestion(Question ques, Quiz q){
+        try
+        {
+            q.SearchQuestion(ques);
+            //modification
+        }
+        catch(NullPointerException e){
+            System.out.println("cette question n'existe pas !");
+        }
     }
-    public void VisualiserQuestion(){
-
+    public void VisualiserQuestion(Question question){
+        question.Afficher();
     }
     public void afficherQuiz(){
         formation.DisplayQuiz();
@@ -81,12 +89,12 @@ class Formateur extends Compte{
 
 
     }
-    public void ajouterQuiz(String tit){
+    public void ajouterQuiz(String tit,String dateO,String dateE){
         try{
             formation.SearchQuiz(tit);
         }
         catch(NullPointerException e){
-            formation.tabQuiz.add(new Quiz());
+            formation.tabQuiz.add(new Quiz(tit,dateE,dateO));
         }
     }
     public void supprimerQuiz(String tit){
@@ -105,5 +113,14 @@ class Formateur extends Compte{
             System.out.println("Ce Quiz n'existe pas!");
         }
     }
-    //aprés l'integration graphique ces methode auront des arguments
+    public void majQuiz(Quiz q, List<Apprenant>  listapp){
+        for (Apprenant a : listapp){
+            for (Quiz b :a.tabQuiz) {
+                    if(q.title.equals(b.title)){
+                        b.tabQuestions=q.tabQuestions;
+                        b.title=q.title;
+                    }
+            }
+        }
+    }
 }

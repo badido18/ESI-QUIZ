@@ -9,13 +9,18 @@ class Qo extends Question{
 
     //Methodes
 
-    public int evaluerReponse(){
+    public float evaluerReponse(){
         if(reponse.equals(bonnereponse))
             return 1 ;
         return 0 ;
     }
-    public void repondre(String userReponse){
-        reponse=userReponse;
+    public void repondre(ReponseQO R){
+        reponse=R.rep;
+        accompli=true;
+    }
+    public void Afficher(){
+        super.Afficher();
+        System.out.println("Type Qo ");
     }
 
 }

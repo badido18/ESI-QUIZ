@@ -1,4 +1,6 @@
 package com.company.esi;
 
-public class Reponse {
+import java.util.List;
+
+abstract class Reponse {
 }
