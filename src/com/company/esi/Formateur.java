@@ -1,5 +1,7 @@
 package com.company.esi;
 
+import sun.security.krb5.internal.APRep;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,7 +15,7 @@ class Formateur extends Compte{
     //Attribus
 
     public Formation formation;
-    private Quiz quizTemp;
+    public Quiz quizTemp;
 
     //Methodes
 
@@ -129,6 +131,15 @@ class Formateur extends Compte{
                         b.title=q.title;
                     }
             }
+        }
+    }
+    public void AddQuiztmp(){
+        formation.tabQuiz.add(quizTemp);
+    }
+
+    public void ajoutQuizToApp(){
+        for(Apprenant a: formation.groupeApprenant){
+            a.tabQuiz.addAll(formation.tabQuiz);
         }
     }
 }

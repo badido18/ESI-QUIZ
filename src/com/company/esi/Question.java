@@ -6,8 +6,7 @@ abstract class Question{
 
     private String  type;
     public int numero;
-    private String enonce;
-    public String reponse;
+    public  String enonce;
     public boolean accompli=false;
     //Methodes
 

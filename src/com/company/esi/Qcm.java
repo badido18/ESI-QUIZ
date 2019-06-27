@@ -8,7 +8,7 @@ class Qcm extends Question{
 
     private List<String> propositions ;
     public int nbpropositions;
-    private List<String> bonneReponses;
+    private List<Integer> bonneReponses;
     private int nbBonnereponses;
     private List<Integer> reponseSelectiones;
     private int nbreponsesSelectiones;
@@ -19,8 +19,8 @@ class Qcm extends Question{
         float sum=propositions.size();
         for(Integer a: reponseSelectiones)
         {
-            for(String b : bonneReponses){
-                if(!propositions.get(a).equals(b)){
+            for(Integer b : bonneReponses){
+                if(a.equals(b)){
                     sum-=2;
                     break;
                 }

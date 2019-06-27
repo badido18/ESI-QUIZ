@@ -1,4 +1,6 @@
 package com.company.esi;
+import sun.security.krb5.internal.APRep;
+
 import java.util.*;
 
 class Formation{
@@ -57,15 +59,28 @@ class Formation{
 
 
     public void avoirClassement(){
-            for (Apprenant a : groupeApprenant){
-                
+        avoirTauxresultat();
+        Comparator<Apprenant> compareById = new Comparator<Apprenant>() {
+            @Override
+            public int compare(Apprenant o1, Apprenant o2) {
+                return Float.compare(o1.reussGenreale,o2.reussGenreale);
             }
+        };
+        Collections.sort(groupeApprenant,compareById);
 
-        }
+        for(Apprenant a : groupeApprenant){
+            System.out.println(a.login);
+            for (Quiz q: a.tabQuiz){
+                System.out.print(q.title+" accomplissement: "+ q.accomplissement*100 +" Reussite : " +q.reussite*100);
+            }
+            System.out.print("\n");
+        };
+
+    }
 
 
 
-    private float avoirTauxresultat(Apprenant apprenant){
+    private void avoirTauxresultat(){
         for (Apprenant a : groupeApprenant){
 
             for(Quiz q:a.tabQuiz){
@@ -76,7 +91,6 @@ class Formation{
             a.reussGenreale/=tabQuiz.size();
 
         }
-        return 0;
     }
     public void mettreAjourQuiz(){
         //charge les modification du formateur au apprenant

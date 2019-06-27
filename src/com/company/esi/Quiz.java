@@ -63,6 +63,10 @@ class Quiz{
         }
         return null;
     }
+    public void ajouterNotion(Notion not){
+        tabNotion.add(not);
+        tabQuestions.addAll(not.tabQues);
+    }
 
 
 }

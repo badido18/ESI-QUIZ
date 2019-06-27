@@ -27,12 +27,32 @@ public class Main {
         f.consulterActiviteApprenant();
 
         //creation de notion question quiz
-        //creation 2 quiz
-        //ajout notion
-        //ajout 3 question de la notion
-        //supprimer quiz
-        //modifier question
 
+        //creation 2 quiz
+        f.ajouterQuiz("quiz1","12052019","25122019");
+        f.ajouterQuiz("quiz2","12052019","25122019");
+        f.selectQuiz("quiz1");
+        //ajout notion
+        Notion notion=new Notion("notion1");
+        //ajout 3 question de la notion
+        notion.ajouterQCM("QCM",new ArrayList<String>(Arrays.asList("propo1","propo2","propo3")),new ArrayList<Integer>(Arrays.asList(1,2)));
+        notion.ajouterQCU("QCU",new ArrayList<String>(Arrays.asList("propo1","propo2","propo3")),2);
+        notion.ajouterQO("QO","bonnerep");
+        notion.ajouterQO("QO2","bonnerep2");
+        //supression dune question
+        notion.suprimerQuestion(3);
+        //modifier question
+        notion.modifierQuestion(1,"nouvel enonce");
+        //supprimer quiz
+        f.supprimerQuiz("quiz2");
+        //ajout notion au quiz
+        f.quizTemp.ajouterNotion(notion);
+        //ajout du quiztemp au tab
+        f.AddQuiztmp();
+
+
+        //sauvegarde
+        f.ajoutQuizToApp();
         //Connexion a un compte apprenant
         f.seDeconnecter();
         application.seConecter("ahmed1","yahiaoui99",0);
@@ -44,7 +64,7 @@ public class Main {
         apr.visualiserQuiz(q);
         //creation des reponses
         ReponseQCU rqcu = new ReponseQCU(1);
-        ReponseQO rqo = new ReponseQO("bonne");
+        ReponseQO rqo = new ReponseQO("bonnerep");
         ReponseQCM rqcm = new ReponseQCM(new ArrayList<>(Arrays.asList(1,2)));
         List<Reponse>  listereponse = new ArrayList<Reponse>(Arrays.asList(rqcm,rqcu,rqo));
         apr.repondreQuiz(q,listereponse);
