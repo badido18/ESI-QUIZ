@@ -4,6 +4,18 @@ import java.util.Scanner;
 
 abstract class Compte{
 
+    //Attribus
+
+    public int  type; //le type du compte apprenant "0" oubien formateur "1" ceci est un indicateur eventuelle
+    private int id;
+    private String Nom;
+    private String preNom;
+    private String dateNaissance;
+    private String adresse;
+    public String login ;
+    public String motDePasse;
+    public boolean connected =false;
+
     //Constructeur
 
     Compte(String nom, String prenom, String dateNaissance){
@@ -15,29 +27,15 @@ abstract class Compte{
         DisplayLogin();
     }
 
-
-    //Attribus
-    public int  type; //le type du compte apprenant "0" oubien formateur "1" ceci est un indicateur eventuelle
-    private int id;
-    private String Nom;
-    private String preNom;
-    private String dateNaissance;
-    private String adresse;
-    public String login ;
-    public String motDePasse;
-    public boolean connected =false;
-
     //methodes
 
     private void defineloginDefault(){
-        login = preNom ;
-        //login +=' ';
-        login += Nom;
+        login = preNom + Nom;
     }
+
     private void defineMotDePasseDefault(){
         motDePasse= Nom + dateNaissance;
     }
-
 
     public void DisplayLogin(){
         System.out.println("Vos information : ");
@@ -48,7 +46,4 @@ abstract class Compte{
     public void seDeconnecter(){
         this.connected=false;
     }
-
-
-
 }

@@ -9,21 +9,25 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.esi.Login">
    <children>
-      <Button fx:id="btnLogin" layoutX="74.0" layoutY="329.0" mnemonicParsing="false" onAction="#loginFormateur" prefHeight="25.0" prefWidth="108.0" text="Formateur" />
-      <Label fx:id="lblStatut" alignment="CENTER" layoutX="61.0" layoutY="388.0" prefHeight="43.0" prefWidth="381.0" textFill="#d72b2a" />
-      <PasswordField fx:id="txtPassword" layoutX="176.0" layoutY="238.0" promptText="Mot de passe" />
-      <TextField fx:id="txtUsername" layoutX="176.0" layoutY="188.0" promptText="Nom d'utilisateur" />
+      <Button fx:id="btnLogin" layoutX="73.0" layoutY="250.0" mnemonicParsing="false" onAction="#loginFormateur" prefHeight="25.0" prefWidth="108.0" text="Formateur" />
+      <Label fx:id="lblStatut" alignment="CENTER" layoutX="60.0" layoutY="282.0" prefHeight="43.0" prefWidth="381.0" textFill="#d72b2a" />
+      <PasswordField fx:id="txtPassword" layoutX="176.0" layoutY="177.0" promptText="Mot de passe" />
+      <TextField fx:id="txtUsername" layoutX="175.0" layoutY="146.0" promptText="Nom d'utilisateur" />
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="165.0" layoutY="32.0" prefHeight="57.0" prefWidth="170.0" text="ESI QUIZ" textAlignment="RIGHT">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Button layoutX="320.0" layoutY="329.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="108.0" text="Apprenant" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="171.0" layoutY="131.0" prefHeight="43.0" prefWidth="160.0" text="Connexion">
+      <Button layoutX="319.0" layoutY="250.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="108.0" text="Apprenant" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="170.0" layoutY="89.0" prefHeight="43.0" prefWidth="160.0" text="Connexion">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="182.0" layoutY="299.0" text="se connecter en tant que :" />
+      <Label layoutX="181.0" layoutY="211.0" text="se connecter en tant que :" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="174.0" layoutY="358.0" prefHeight="43.0" prefWidth="170.0" text="Créer un nouveau compte :" />
+      <Label layoutX="245.0" layoutY="350.0" text="Ou" />
+      <Button fx:id="btnCreer" layoutX="73.0" layoutY="426.0" mnemonicParsing="false" onAction="#CreerFormateur" prefHeight="25.0" prefWidth="108.0" text="Formateur" />
+      <Button layoutX="319.0" layoutY="426.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="108.0" text="Apprenant" />
    </children>
 </AnchorPane>

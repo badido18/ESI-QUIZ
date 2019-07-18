@@ -15,7 +15,7 @@ class ESIQUIZ{
 
     //Methodes
 
-    public void seConecter(String login, String mdp,int type){
+    public void seConecter(String login, String mdp, int type){
         try{
             switch(type){
                 case 1 : compteConnecte = SearchFormateur(login,mdp);break;
@@ -30,11 +30,12 @@ class ESIQUIZ{
     }
 
     private Compte SearchFormateur(String login, String mdp){
-        if((tabFomrateurs[0].login.equals(login) )&&(tabFomrateurs[0].motDePasse.equals(mdp)))
+        if((tabFomrateurs[0].login.equals(login))&&(tabFomrateurs[0].motDePasse.equals(mdp)))
             return tabFomrateurs[0];
         else
             return null;
     }
+
     private Compte SearchApprenant(String login, String mdp){
         if(tabFomrateurs[0]!=null)//exception
             return tabFomrateurs[0].formation.SearchApprenant(login,mdp);

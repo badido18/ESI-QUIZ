@@ -10,22 +10,25 @@ import java.util.Scanner;
 
 class Formateur extends Compte{
 
-    Formateur(String nom, String prenom, String dateN){
-        super(nom,prenom,dateN);
-        super.type = 1;
-        // initialisation et chargement des quiz du formateur
-    }
     //Attribus
 
     public Formation formation;
     public Quiz quizTemp;
 
-    //Methodes
+    //Constructeur
 
+    Formateur(String nom, String prenom, String dateN){
+        super(nom,prenom,dateN);
+        super.type = 1;
+        // initialisation et chargement des quiz du formateur
+    }
+
+    //Methodes
 
     public void creerFormation(String nom,String Des,String DD,String DF){
         formation = new Formation(nom,Des,DD,DF);
     }
+
     public void creerCompteApprenant(String nom, String prenom, String dateN){
         try{
             formation.nbapprenant++;
@@ -36,12 +39,14 @@ class Formateur extends Compte{
         }
 
     }
+
     public void modifierCompteApprenant(String login,String nvlogin,String nvmdp){
         Compte app;
         app = formation.SearchApprenant(login);
         app.login=nvlogin;
         app.motDePasse=nvmdp;
     }
+
     public void supprimerCompteApprenant(String login){
         try{
             formation.groupeApprenant.remove(formation.SearchApprenant(login));
@@ -51,6 +56,7 @@ class Formateur extends Compte{
             System.out.println("Ce login n'existe pas");
         }
     }
+
     public void consulterActiviteApprenant() {
         System.out.println("Les comptes : ");
         for(Apprenant a : formation.groupeApprenant){
@@ -62,6 +68,7 @@ class Formateur extends Compte{
         }
         System.out.println("FIn de la liste");
     }
+
     public void consulterActiviteApprenant(Apprenant a) {
         System.out.println(a.login);
             for (Quiz q: a.tabQuiz){
@@ -69,12 +76,15 @@ class Formateur extends Compte{
             }
             System.out.print("\n");
     }
+
     public void supprimerQuestion(Question ques,Quiz q){
         q.tabQuestions.remove(ques);
     }
+
     public void ajouterQuestion(Question ques, Quiz q){
         q.tabQuestions.add(ques);
     }
+
     public void modifierQuestion(Question ques, Quiz q){
         try
         {
@@ -85,12 +95,14 @@ class Formateur extends Compte{
             System.out.println("cette question n'existe pas !");
         }
     }
+
     public void VisualiserQuestion(Question question){
         question.Afficher();
     }
     public void afficherQuiz(){
         formation.DisplayQuiz();
     }
+
     public void modifierQuiz(String tit){
         try{
             Quiz qz = formation.SearchQuiz(tit);
@@ -102,6 +114,7 @@ class Formateur extends Compte{
 
 
     }
+
     public void ajouterQuiz(String tit,String dateO,String dateE){
         if(formation.SearchQuiz(tit)== null) {
             formation.tabQuiz.add(new Quiz(tit, dateE, dateO));
@@ -109,6 +122,7 @@ class Formateur extends Compte{
         }
 
     }
+
     public void supprimerQuiz(String tit){
         try {
             formation.tabQuiz.remove(formation.SearchQuiz(tit));
@@ -117,6 +131,7 @@ class Formateur extends Compte{
             System.out.println("Ce Quiz n'existe pas!");
         }
     }
+
     public void selectQuiz(String tit){
         try {
             quizTemp=formation.SearchQuiz(tit);
@@ -125,6 +140,7 @@ class Formateur extends Compte{
             System.out.println("Ce Quiz n'existe pas!");
         }
     }
+
     public void majQuiz(Quiz q, List<Apprenant>  listapp){
         for (Apprenant a : listapp){
             for (Quiz b :a.tabQuiz) {
@@ -135,6 +151,7 @@ class Formateur extends Compte{
             }
         }
     }
+
     public void ajoutQuizToApp() {
         for (Apprenant a : formation.groupeApprenant) {
             for ( Quiz q :formation.tabQuiz){
